@@ -19,7 +19,6 @@ class Component {
     // в параметре принимает объект того класса куда будем вставлять данные
     // то есть компанет должен у активити обратиться к полю компьютер и присвоить ему какое то значение
     fun inject(activity: Activity) {
-        activity.computer = getComputer()
-        activity.keyboard = Keyboard()
+       // activity.keyboard = Keyboard()
     }
 }
