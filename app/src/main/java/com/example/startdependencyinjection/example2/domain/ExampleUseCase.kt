@@ -1,12 +1,12 @@
 package com.example.startdependencyinjection.example2.domain
 
-import com.example.startdependencyinjection.example2.domain.ExampleRepository
+import javax.inject.Inject
 
-class ExampleUseCase(
+class ExampleUseCase @Inject constructor(
     private val repository: ExampleRepository
 ) {
 
     operator fun invoke() {
-
+        repository.method()
     }
 }
