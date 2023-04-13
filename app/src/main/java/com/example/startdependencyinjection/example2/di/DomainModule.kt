@@ -4,7 +4,6 @@ import com.example.startdependencyinjection.example2.data.repository.ExampleRepo
 import com.example.startdependencyinjection.example2.domain.ExampleRepository
 import dagger.Binds
 import dagger.Module
-import dagger.Provides
 
 @Module
 interface DomainModule {
