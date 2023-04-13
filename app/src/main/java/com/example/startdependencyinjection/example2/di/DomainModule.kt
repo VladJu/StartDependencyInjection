@@ -4,13 +4,11 @@ import com.example.startdependencyinjection.example2.data.repository.ExampleRepo
 import com.example.startdependencyinjection.example2.domain.ExampleRepository
 import dagger.Binds
 import dagger.Module
+import dagger.Provides
 
 @Module
 interface DomainModule {
-    //тут нужна реализация репозитория
 
-
-    //т.к даггер знает как создавать раелизацию репозитория
     @Binds
-    fun bindRepository(impl: ExampleRepositoryImpl) : ExampleRepository
+    fun bindRepository(impl: ExampleRepositoryImpl): ExampleRepository
 }
