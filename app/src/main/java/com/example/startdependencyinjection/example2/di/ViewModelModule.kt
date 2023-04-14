@@ -6,21 +6,17 @@ import com.example.startdependencyinjection.example2.presentation.ExampleViewMod
 import dagger.Binds
 import dagger.Module
 import dagger.multibindings.IntoMap
-import dagger.multibindings.StringKey
 
 @Module
 interface ViewModelModule {
-    //Нужна данная @IntoMap иначае даггер не будет знать какую реализацию использовать
-    //Запрашиваем VM в виде коллекции, он возьмет все реализации сложит в одну коллекцию и передаст
-    //ее в конструктор ViewModelFactory
 
     @IntoMap
-    @StringKey("ExampleViewModel")
+    @ViewModelKey(ExampleViewModel::class)
     @Binds
     fun bindExampleViewModel(impl : ExampleViewModel) : ViewModel
 
     @IntoMap
-    @StringKey("ExampleViewModel2")
+    @ViewModelKey(ExampleViewModel2::class)
     @Binds
     fun bindExampleViewModel2(impl : ExampleViewModel2) : ViewModel
 
