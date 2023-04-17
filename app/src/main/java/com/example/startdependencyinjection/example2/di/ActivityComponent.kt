@@ -4,10 +4,11 @@ import com.example.startdependencyinjection.example2.presentation.MainActivity
 import com.example.startdependencyinjection.example2.presentation.MainActivity2
 import dagger.BindsInstance
 import dagger.Subcomponent
+import javax.inject.Named
 
 @Subcomponent(
     //он будет создавать VM -> подключаем модуль с VM
-    modules=[ViewModelModule::class]
+    modules = [ViewModelModule::class]
 )
 interface ActivityComponent {
 
@@ -18,10 +19,10 @@ interface ActivityComponent {
     //тут в граф надо закинуть id
 
     @Subcomponent.Factory
-    interface Factory{
-
+    interface Factory {
         fun create(
-            @BindsInstance id : String
-        ) : ActivityComponent
+            @BindsInstance @IdQualifier id: String,
+            @BindsInstance @NameQualifier name: String
+        ): ActivityComponent
     }
 }
